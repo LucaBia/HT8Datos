@@ -13,4 +13,9 @@ public class Paciente implements Comparable {
     public int compareTo(Object o) {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return nombre + " " + sintoma + " " + codigo;
+    }
 }
