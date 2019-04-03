@@ -1,6 +1,6 @@
 import java.util.Vector;
 
-public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
+public class VectorHeap<E extends Comparable<E>> implements PriorityQueueI<E> {
 
 	protected Vector<E> data; // the data, kept in heap order
 
@@ -112,12 +112,12 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueue<E> {
 
 	@Override
 	public boolean isEmpty() {
-		return false;
+		return size() == 0;
 	}
 
 	@Override
 	public int size() {
-		return 0;
+		return data.size();
 	}
 
 	@Override

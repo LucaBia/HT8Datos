@@ -1,4 +1,4 @@
-public class Paciente implements Comparable {
+public class Paciente implements Comparable<Paciente> {
     String nombre;
     String sintoma;
     String codigo; //A a E
@@ -10,8 +10,8 @@ public class Paciente implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        return 0;
+    public int compareTo(Paciente paciente) {
+        return codigo.compareToIgnoreCase(paciente.codigo);
     }
 
     @Override

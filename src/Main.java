@@ -4,10 +4,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Vector;
 import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
+        Vector listaPacientes = new Vector<Paciente>();
+
         //Para leer el archivo
         Scanner read = new Scanner(System.in);
         String archivoNombre;
@@ -25,17 +28,26 @@ public class Main {
         }
 
         for (String linea : archivo) {
-            //String lineaClean = linea.replaceAll(",", "");
-
             ArrayList<String> pacienteArray = new ArrayList();
             for (String info : linea.trim().split(",")) {
                 pacienteArray.add(info);
             }
 
-            Paciente paciente = new Paciente(pacienteArray.get(0), pacienteArray.get(1), pacienteArray.get(2));
-            System.out.println(paciente);
-
+            listaPacientes.add(new Paciente(pacienteArray.get(0), pacienteArray.get(1), pacienteArray.get(2)));
         }
 
+        VectorHeap colaPacientes = new VectorHeap(listaPacientes);
+        //NO SE CUAL DE LAS DOS USAR
+        //VectorHeapC colaPacientes = new VectorHeapC(listaPacientes);
+        //PriorityQueue colaPacientes = new PriorityQueue(listaPacientes);
+
+        Boolean continuar = true;
+
+        while (continuar) {
+            System.out.println(colaPacientes.remove());
+            System.out.println("Mostrar siguiente paciente? s/n");
+            String continuarText = read.next();
+            continuar = continuarText.equals("s") && !colaPacientes.isEmpty();
+        }
     }
 }
