@@ -24,7 +24,7 @@ public class VectorHeapTest<E> {
     @Test
     public void getFirstTest(){
         VectorHeap myVectorHeap = new VectorHeap();
-        Paciente Luca = new Paciente("Luca", "Sueño", "A");
+        Paciente Luca = new Paciente("Luca", "Suenio", "A");
         myVectorHeap.add(Luca);
         Paciente expectedResult = Luca;
         assertEquals(expectedResult, myVectorHeap.getFirst());
@@ -33,7 +33,7 @@ public class VectorHeapTest<E> {
     @Test
     public void removeTest(){
         VectorHeap myVectorHeap = new VectorHeap();
-        Paciente Luca = new Paciente("Luca", "Sueño", "A");
+        Paciente Luca = new Paciente("Luca", "Suenio", "A");
         Paciente Willi = new Paciente("Willi", "Hueva", "E");
         myVectorHeap.add(Luca);
         myVectorHeap.add(Willi);
