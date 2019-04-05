@@ -162,7 +162,6 @@ public class VectorHeap<E extends Comparable<E>> implements PriorityQueueI<E> {
 	 * Retorna el tamanio del vector
 	 * @return tamanio
 	 */
-
 	@Override
 	public int size() {
 		return data.size();
